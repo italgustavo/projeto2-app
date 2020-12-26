@@ -1,0 +1,45 @@
+<h1>Página de Clientes</h1>
+
+<div style="text-align:center">
+    <ul>
+
+        <!--
+   <li
+  [id] = " 'lista-' + item.nome "
+  [style.color]="item.idade > 30 ? 'red':'green'"
+  *ngFor="let item of clientes" 
+  [innerHtml]="
+  
+  (item.nome | lowercase)+ ' - ' + 
+  item.idade + ' - ' + 
+  (item.valor | formatCurrency) + ' - ' +
+  (item.data | formatDate)
+  "
+  >
+      {{ item.nome }} - {{ item.idade}} 
+
+  </li>
+ -->
+
+        <!--<ul>
+   <li 
+    [id] = " 'lista-' + item.nome "
+    [ngClass]="{'verde':item.idade < 30, 'vermelho':item.idade > 30, 'fonteg':item.idade > 50}"
+    *ngFor="let item of clientes" 
+    [innerHtml]="item.nome + ' - ' + item.idade">
+        {{ item.nome }} - {{ item.idade}} 
+  
+    </li> 
+    <li *ngFor="let item of clientes">
+        {{ item.nome | uppercase }} - {{item.idade}}
+        </li>
+  </ul> 
+-->
+
+        <li *ngFor="let item of clientes" [appMeusClientes]="item.valor">
+            {{ item.nome | uppercase}} - {{ item.idade }}
+            {{ item.valor | formatCurrency}} -
+            {{ item.data | formatDate}}
+        </li>
+    </ul>
+</div>
